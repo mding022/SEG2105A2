@@ -1,3 +1,3 @@
-| Test Case ID (from [References](TCReferences.docx)) | README |
+| Test Case ID (from [References](TCReferences.docx)) | Status |
 | ------ | ------ |
 | 2001 | Pass |
