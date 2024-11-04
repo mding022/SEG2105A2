@@ -104,7 +104,6 @@ public class EchoServer extends AbstractServer
 			  case "stop":
 				  try {
                       this.stopListening();
-                      serverUI.display("Server has stopped listening for new connections.");
                   } catch (Exception e) {
                       serverUI.display("Error stopping the server: " + e.getMessage());
                   }
