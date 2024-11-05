@@ -53,12 +53,13 @@ public class EchoServer extends AbstractServer
    * @param client The connection from which the message originated.
    */
   public void handleMessageFromClient
-    (Object msg, ConnectionToClient client)
-  {
-	  if(msg.toString().substring(0,6).equals("#login")) {
+    (Object msg, ConnectionToClient client) {
+	  if(msg.toString().length() >= 6 && msg.toString().substring(0,6).equals("#login")) {
 		  if(client.getInfo("loginId") == null) {
 			  client.setInfo("loginId", msg.toString().substring(7));
-		  } else {
+			  serverUI.display("Client with loginId " + client.getInfo("loginId") + " joined.");
+		  } 
+		  else {
 			  try {
 				client.sendToClient("SERVER MSG> Error logging in due to already being logged in.");
 				serverUI.display("Client tried executing the login method whilst already being logged in. Terminating the connection now.");

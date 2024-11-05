@@ -1,10 +1,11 @@
 | Test Case ID (from [References](TCReferences.docx)) | Status |
 | ------ | ------ |
+| All  | Pass |
 | 2001 | Pass |
 | 2002 | Pass |
 | 2003 | Pass |
 | 2004 | Pass |
-| 2005 |  |
+| 2005 | Pass |
 | 2006 | Pass |
 | 2007 | Pass |
 | 2008 | Pass |
