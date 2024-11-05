@@ -55,8 +55,22 @@ public class EchoServer extends AbstractServer
   public void handleMessageFromClient
     (Object msg, ConnectionToClient client)
   {
+	  if(msg.toString().substring(0,6) == "#login") {
+		  if(client.getInfo("loginId") == null) {
+			  client.setInfo("loginId", msg.toString().substring(7));
+		  } else {
+			  try {
+				client.sendToClient("SERVER MSG> Error logging in due to already being logged in.");
+				serverUI.display("Client tried executing the login method whilst already being logged in. Terminating the connection now.");
+				client.close();
+			} catch (IOException e) {
+				serverUI.display("Unexpected error in terminating a client's connection.");
+			}
+		  }
+	  } else {
     serverUI.display("Message received: " + msg + " from " + client);
-    this.sendToAllClients(msg);
+    this.sendToAllClients(client.getInfo("loginId")+"> "+msg); 
+    }
   }
     
   /**
