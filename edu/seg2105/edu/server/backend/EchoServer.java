@@ -55,7 +55,7 @@ public class EchoServer extends AbstractServer
   public void handleMessageFromClient
     (Object msg, ConnectionToClient client)
   {
-	  if(msg.toString().substring(0,6) == "#login") {
+	  if(msg.toString().substring(0,6).equals("#login")) {
 		  if(client.getInfo("loginId") == null) {
 			  client.setInfo("loginId", msg.toString().substring(7));
 		  } else {

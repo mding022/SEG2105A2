@@ -119,7 +119,10 @@ public class ClientConsole implements ChatIF
   {
     String host = "";
     int port = -1;
-
+    String loginId = "";
+    try { loginId = args[0]; } catch(ArrayIndexOutOfBoundsException e) {
+    	loginId = "unnamed";
+    }
     try
     {
       host = args[1];
@@ -131,7 +134,7 @@ public class ClientConsole implements ChatIF
     
     try { port = Integer.parseInt(args[2]); } catch (Exception e) { port = DEFAULT_PORT; }
     
-    ClientConsole chat= new ClientConsole(args[0], host, DEFAULT_PORT);
+    ClientConsole chat= new ClientConsole(loginId, host, DEFAULT_PORT);
     chat.accept();  //Wait for console data
   }
 }
