@@ -121,7 +121,8 @@ public class ClientConsole implements ChatIF
     int port = -1;
     String loginId = "";
     try { loginId = args[0]; } catch(ArrayIndexOutOfBoundsException e) {
-    	loginId = "Unnamed User";
+    	System.out.println("Login ID required to log in to the server.");
+    	System.exit(0);
     }
     try
     {
