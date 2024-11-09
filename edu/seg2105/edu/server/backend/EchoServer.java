@@ -173,7 +173,7 @@ public class EchoServer extends AbstractServer
 	    {
 	    	if(!isCommand) {
 	    		serverUI.display(String.format("Broadcasting '%s' to all connected clients.", message));
-	    		this.sendToAllClients(message);
+	    		this.sendToAllClients("SERVER MESSAGE> " + message);
 	    	}
 	    }
 	    catch(Exception e)
