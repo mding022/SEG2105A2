@@ -57,7 +57,7 @@ public class EchoServer extends AbstractServer
 	  if(msg.toString().length() >= 6 && msg.toString().substring(0,6).equals("#login")) {
 		  if(client.getInfo("loginId") == null) {
 			  client.setInfo("loginId", msg.toString().substring(7));
-			  serverUI.display("Client with loginId " + client.getInfo("loginId") + " joined.");
+			  serverUI.display("Message received: #login " + client.getInfo("loginId") + " from null.");
 		  } 
 		  else {
 			  try {
